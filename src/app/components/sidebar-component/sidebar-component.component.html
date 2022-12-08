@@ -6,25 +6,29 @@
         <div class="list-group list-group-flush mx-3 mt-4">
             <a
                 (click)="rota(1)"
+                [ngClass] = "{'active': ids == 1}"
                 class="list-group-item list-group-item-action py-2 ripple"
             >
                 <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Início</span>
             </a>
             <a 
                 (click)="rota(2)" 
-                class="list-group-item list-group-item-action py-2 ripple active"
+                [ngClass] = "{'active': ids == 2}"
+                class="list-group-item list-group-item-action py-2 ripple"
             >
                 <i class="fas fa-car fa-fw me-3"></i><span>Veículos</span>
             </a>
             <a
                 (click)="rota(3)"
+                [ngClass] = "{'active': ids == 3}"
                 class="list-group-item list-group-item-action py-2 ripple"
             >
                 <i class="fas fa-briefcase fa-fw me-3"></i><span>Serviços</span>
             </a
             >
             <a 
-                (click)="rota(4)" 
+                (click)="rota(4)"
+                [ngClass] = "{'active': ids == 4}"
                 class="list-group-item list-group-item-action py-2 ripple"
             >
                 <i class="fas fa-user-circle fa-fw me-3"></i><span>Perfil</span>
