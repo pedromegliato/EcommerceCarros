@@ -25,6 +25,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PesquisaComponentComponent } from './components/pesquisa-component/pesquisa-component.component';
 import { OfertaComponentComponent } from './components/oferta-component/oferta-component.component';
 import { FiltrosComponentComponent } from './components/filtros-component/filtros-component.component';
+import { InterfaceLoginCadastroComponent } from './views/interface-login-cadastro/interface-login-cadastro.component';
+import { FormsModule } from '@angular/forms';
+import { InterfaceAdminComponent } from './Layouts/interface-admin/interface-admin.component';
+import { InterfaceDashboardComponent } from './views/admin/interface-dashboard/interface-dashboard.component';
+import { InterfaceConfiguracaoComponent } from './views/admin/interface-configuracao/interface-configuracao.component';
+import { InterfaceVeiculosComponent } from './views/admin/veiculos/interface-veiculos/interface-veiculos.component';
+import { SidebarComponentComponent } from './components/sidebar-component/sidebar-component.component';
+
 
 
 
@@ -37,7 +45,13 @@ import { FiltrosComponentComponent } from './components/filtros-component/filtro
     FooterComponentComponent,
     PesquisaComponentComponent,
     OfertaComponentComponent,
-    FiltrosComponentComponent
+    FiltrosComponentComponent,
+    InterfaceLoginCadastroComponent,
+    InterfaceAdminComponent,
+    InterfaceDashboardComponent,
+    InterfaceConfiguracaoComponent,
+    InterfaceVeiculosComponent,
+    SidebarComponentComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,7 +72,9 @@ import { FiltrosComponentComponent } from './components/filtros-component/filtro
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [InterfaceMainComponent]
