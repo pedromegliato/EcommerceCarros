@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-interface-veiculos',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InterfaceVeiculosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  rota = (event: any) => {
+    switch (event) {
+        case 1:
+            this.router.navigate(['/admin/veiculos/listar']);
+            break;
+        case 2:
+            this.router.navigate(['/admin/veiculos/cadastrar']);
+            break;
+    }
   }
 
 }

@@ -1,0 +1,51 @@
+<div class="textTituo"><b>Veículos. </b><span></span>Confira a lista de veiculos abaixo</div>
+
+<div class="container-list-noticia">
+    <mat-form-field class="pesquisa" appearance="standard">
+        <mat-label>Pesquisar</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Digite o nome" #input>
+    </mat-form-field>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="nome">
+          <th class="th-header bgk" mat-header-cell *matHeaderCellDef> Nome </th>
+          <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="marca">
+          <th class="th-header bgk mobile"  mat-header-cell *matHeaderCellDef> Marca </th>
+          <td class="mob mobile" mat-cell *matCellDef="let element"> {{element.marca}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="ano">
+            <th class="th-header bgk mobile"  mat-header-cell *matHeaderCellDef> Ano </th>
+            <td class="mob mobile" mat-cell *matCellDef="let element"> {{element.ano}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="valor">
+            <th class="th-header bgk mobile"  mat-header-cell *matHeaderCellDef> Valor </th>
+            <td class="mob mobile" mat-cell *matCellDef="let element"> {{element.valor}} </td>
+        </ng-container>
+
+
+
+        <ng-container matColumnDef="action" class="nao_mostra tr-direita" >
+            <th class="th-header bgk optTitu" mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element" class="box_two_options">
+                <div class="td-action">
+                  <span class="opt" ><i class='bx bx-show-alt'></i> Visualizar</span>
+                  <span class="opt" (click)="editNoticia(element)"><i class='bx bx-edit'></i> Editar</span>
+                </div>
+            </td>
+          </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+        showFirstLastButtons
+        #paginator
+        aria-label="Select page of periodic elements">
+    </mat-paginator>
+</div>
+

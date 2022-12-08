@@ -1,0 +1,33 @@
+.textTituo {
+    font-size: 20px;
+}
+
+.containerBox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #1266f1;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: ease-in-out 0.5s;
+    text-align: center;
+}
+
+.box:hover {
+    background:#1266f1;
+    color:white;
+    transition: ease-in-out 0.5s;
+}

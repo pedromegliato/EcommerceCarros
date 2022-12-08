@@ -1,0 +1,19 @@
+<div class="maxview" *ngIf="isShow()">
+    <div class="modalPerson-background"></div>
+    <div class="modalPerson">
+        <div class="headerdisplay" *ngIf="!noneHeader">
+            <div>
+                <ng-content select="[header]"></ng-content>
+            </div>
+            <div class="modalPerson-close" (click)="close()">
+                <i class='bx bx-x'></i>
+            </div>
+        </div>
+        <div class="modalPerson-body">
+            <ng-content select="[body]"></ng-content>
+        </div>
+        <div>
+            <ng-content select="[footer]"></ng-content>
+        </div>
+    </div>
+</div>

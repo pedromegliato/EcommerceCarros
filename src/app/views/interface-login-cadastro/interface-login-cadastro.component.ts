@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario.model';
+import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({
   selector: 'app-interface-login-cadastro',
@@ -31,7 +32,7 @@ export class InterfaceLoginCadastroComponent implements OnInit {
     sobre: ""
   }
 
-  constructor() { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
       this.tabChange("0");
@@ -47,6 +48,7 @@ export class InterfaceLoginCadastroComponent implements OnInit {
       } else {
         this.erro=false;
         console.log(this.usuario);
+        this.loginService.login(this.usuario);
       }
       
   }
@@ -57,6 +59,7 @@ export class InterfaceLoginCadastroComponent implements OnInit {
     } else {
       this.erroCad=false;
       console.log(this.usuarioCadastro);
+      this.loginService.login(this.usuario);
     }
   }
 

@@ -18,7 +18,7 @@ export class SidebarComponentComponent implements OnInit {
   setLoadMenuActivePage = () => {
       if(window.location.pathname == '/admin/dashboard') {
           this.ids = 1;
-      } else if(window.location.pathname == '/admin/veiculos'){
+      } else if(window.location.pathname == '/admin/veiculos' || window.location.pathname == '/admin/veiculos/listar' || window.location.pathname == '/admin/veiculos/cadastrar'){
           this.ids = 2;
       } else if(window.location.pathname == '/admin/servicos'){
           this.ids = 3;

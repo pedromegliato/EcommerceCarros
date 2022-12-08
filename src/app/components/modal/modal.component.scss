@@ -1,0 +1,49 @@
+div.maxview {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 888;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.modalPerson {
+    background-color: #fff;
+    border: solid 1px #aaa;
+    border-radius: 5px;
+    opacity: 1;
+    max-width: calc(100% - 20px);
+    max-height: 95vh;
+    min-height: 256px;
+    min-width: 200px;
+    z-index: 889;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+div.modalPerson-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.5;
+    z-index: 888;
+}
+
+div.modalPerson-close{
+    font-size: 26px;
+    color: red;
+    cursor: pointer;
+}
+
+div.headerdisplay {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
