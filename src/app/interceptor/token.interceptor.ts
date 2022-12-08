@@ -14,18 +14,19 @@ export class TokenInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 
-    const tokenString = localStorage.getItem('rt');
+    const tokenString = sessionStorage.getItem('rt');
 
     if( tokenString ){
-        const token = JSON.parse(tokenString);
-        const jwt = token.access;
-        request = request.clone({
-            setHeaders: {
-            Authorization: 'Bearer ' + jwt
-            }
-        });
+      const token = JSON.parse(tokenString);
+      const jwt = token.access;
+      request = request.clone({
+        setHeaders: {
+          Authorization: 'Bearer ' + jwt
+        }
+      });
     }
 
     return next.handle(request);
   }
+
 }

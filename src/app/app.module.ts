@@ -109,12 +109,13 @@ import { AuthGuard } from './AuthGuard/auth.service';
   ],
   providers: [
     AuthGuard,
+    // ModalService,
     LoginService,
     {
       provide : HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi : true,
-    }
+    },
   ],
   bootstrap: [InterfaceMainComponent]
 })
