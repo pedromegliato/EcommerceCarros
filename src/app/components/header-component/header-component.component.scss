@@ -1,0 +1,48 @@
+a { cursor: pointer; }
+
+.bx-sm { margin-right: 10px;}
+.personbg { background: #fff; }
+.nav-item {  width: 145px !important;}
+.personMenuLink{ display: flex; align-items: center;}
+.active {
+    color: #3374db !important;
+    font-weight: 500;
+}
+.PersonFluid {
+    max-width: 1440px;
+    width: 100%;
+    min-width: 340px;
+    padding: 0 20px;
+}
+.logoPerson {
+    color: #000000;
+    font-weight: 700;
+    font-size: 2.2rem;
+}
+
+.navbar-collapse {
+    .bx-sm { margin-right: 10px !important;}
+    .personMobBox {
+        display: block !important;
+        width: inherit !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    .bx-sm { margin-right: 0px !important;}
+    .mobileMenu { display: none;}
+    .personMobBox {
+        display: flex;
+        justify-content: flex-end;
+        width: inherit !important;
+    }
+
+    .navbar-collapse {
+        .bx-sm { margin-right: 10px !important;}
+        .mobileMenu { display: block;}
+        .personMobBox {
+            display: block !important;
+            width: inherit !important;
+        }
+    }
+}

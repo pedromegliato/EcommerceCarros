@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-light personbg">
+    <div class="container-fluid PersonFluid">
+        <a (click)="menuRota(1)" class="navbar-brand logoPerson">PGLM</a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            (click)="basicNav.toggle()"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav" mdbCollapse #basicNav="mdbCollapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a (click)="menuRota(1)" class="nav-link active">Comprar carro</a>
+                </li>
+                <li class="nav-item">
+                    <a (click)="menuRota(2)" class="nav-link">Vender carro</a>
+                </li>
+                <li class="nav-item">
+                    <a (click)="menuRota(3)" class="nav-link">App PGLM</a>
+                </li>
+                <li mdbDropdown class="nav-item">
+                    <a
+                        (click)="menuRota(4)"
+                        class="nav-link dropdown-toggle"
+                        type="button"
+                        id="dropdownMenu2"
+                        mdbDropdownToggle
+                        aria-expanded="false">
+                        Sobre nós
+                    </a>
+                    <ul mdbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <li><button class="dropdown-item" type="button">Onde estamos</button></li>
+                        <li><button class="dropdown-item" type="button">Guia de preços</button></li>
+                        <li>
+                          <button class="dropdown-item" type="button">Blog</button>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item personMobBox">
+                    <a (click)="menuRota(7)" class="nav-link personMenuLink"><i class='bx bx-user-circle bx-sm'></i> <span class="mobileMenu">Cadastre-se</span> </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
