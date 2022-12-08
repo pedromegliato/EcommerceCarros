@@ -1,0 +1,31 @@
+.boxContainer { 
+    background: #0a448a;
+    width: 100%;
+    cursor: pointer;
+}
+
+.limitContainer {
+    max-width: 1440px;
+    width: 100%;
+    min-width: 340px;
+    margin: 0 auto;
+    padding: 5px 20px;
+}
+
+.imgPromo {
+    width: 80px;
+}
+
+.textOfer {
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

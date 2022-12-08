@@ -1,0 +1,40 @@
+.boxContainer {
+    max-width: 1440px;
+    width: 100%;
+    min-width: 340px;
+    padding: 0px 20px;
+    margin: 0 auto;
+
+}
+
+.globalBox {
+    background: #3374db;
+    padding: 10px 0;
+    border-radius: 5px 5px 0 0 ;
+}
+
+.bgPerson {
+    background: #fff;
+    border: none !important;
+    color: blue !important;
+    height: 40px;
+}
+
+.inputperson {
+    border: none !important;
+    border-radius: 3px 0px 0px 3px !important;
+    height: 40px;
+}
+
+.inputperson:focus{
+    outline: none !important;
+    border: none !important;
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }

@@ -1,0 +1,169 @@
+.tagPerson { cursor: pointer;}
+
+.boxContainer {
+    width: 100%;
+}
+
+.personBtn {
+    border: 1px solid #c7c7c7;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    display: flex;
+}
+.sub {margin-top: 10px;}
+
+.limitMax {
+    max-width: 1440px;
+    width: 100%;
+    min-width: 340px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.personOrder {
+    color: #000;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.boxPerson {
+    margin-top: 30px;
+}
+
+.personFilter {
+    font-weight: 700;
+    color: #000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.personRemove {
+    color: rgb(174, 174, 174);
+    font-weight: 500;
+}
+
+.hoverPerson {
+    cursor: pointer;
+}
+
+.hoverPerson:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+.result {
+    margin-left: 20px;
+    font-weight: 400;
+    cursor: initial;
+}
+
+.ContBox {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    max-width: 1440px;
+    min-width: 340px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.filtrosColapse {
+    max-width: 400px;
+    width: 100%;
+    min-width: 300px;
+}
+
+.conteudoCarsList {
+    width: 100%;
+}
+
+.accordion-button:not(.collapsed), .accordion-button {
+    color: #6c6c6c !important;
+    background-color: #fff;
+    box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+.accordion-button:not(.collapsed){
+    box-shadow: none;
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+.accordion-item:last-of-type .accordion-collapse {
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
+}
+
+.ativo {
+    background: #3374db;
+    color: #fff;
+    border: 1px solid #3374db;
+}
+
+.contPerson {
+    margin-bottom: 15px;
+}
+
+.boxCar{
+    width: 336px;
+    height: 286px;
+    margin: 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+    box-shadow: 0 1px 5px 0 rgb(70 70 70 / 15%), 0 2px 2px 0 rgb(70 70 70 / 15%), 0 3px 2px -2px rgb(70 70 70 / 15%);
+}
+
+.boxCar:hover{
+    box-shadow: 0 1px 7px 0 rgb(126 124 124 / 50%), 0 2px 2px 0 rgb(70 70 70 / 15%), 0 3px 2px -2px rgb(70 70 70 / 15%);
+}
+
+.boximgCar {
+    width: 100%;
+    position: relative;
+}
+
+.imgCar { 
+    width: 100%;
+}
+
+.promtion {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 3px 8px;
+    font-weight: 600;
+    font-size: 12px;
+    background: #d2ed00;
+    border-radius: 5px;
+}
+
+.boxDescricao {
+    padding: 10px 20px ;
+}
+
+.tituloCar {
+    color: #000;
+    font-weight: 600;
+}
+.DetalhesInfo {
+    font-size: 14px;
+    color: #858585;
+    font-weight: 500;
+}
+
+.PrecoPromo {
+    color: #3374db;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.Preco {
+    color: #858585;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: line-through;
+}

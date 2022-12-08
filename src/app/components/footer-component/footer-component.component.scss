@@ -1,0 +1,33 @@
+
+.subTextPrefixo { font-size: 12px; margin-right: 5px;}
+.ColorBg { background-color: #000 !important}
+.imgSize{ width: 80px;}
+.text-start a, .text-start p  { font-weight: 300 !important;}
+a {cursor: pointer;}
+
+.bgHr { 
+    background-color: #fff !important;
+    margin-top: 80px;
+}
+.personContainer {
+    max-width: 1440px;
+    min-width: 340px;
+    width: 100%;
+    padding: 20px !important;
+}
+
+.personLogo {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.personFlex {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+@media (max-width: 768px){
+    .personMob {
+        text-align: center !important;
+    }
+}
