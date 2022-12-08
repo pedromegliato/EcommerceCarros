@@ -1,0 +1,59 @@
+<app-header-component></app-header-component>
+<div class="col-12 personBox">
+    <div class="col-4 bgPerson"></div>
+    <div class="col-8 mobPerson">
+        <div class="container_tab">
+            <div class="limit">
+                <div class="box_tabs">
+                    <span (click)='tabChange(0)' class="btn_tabs" [ngClass]="{ativo : ids == 0}">
+                        Entrar
+                    </span>
+                    <span (click)='tabChange(1)' class="btn_tabs" [ngClass]="{ativo : ids == 1}">
+                        Cadastro
+                    </span>
+                </div>
+            
+                <div>
+
+                    <div *ngIf="ids == 0"  class="box_conteudo_tab">
+                        <form>
+                            <div *ngIf="erro == true" class="mb-3">
+                                <span class="error"><i class='bx bxs-error'></i> Preencha todos os campos!</span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Nome de usuário</label>
+                                <input type="text" class="form-control" id="username" name="username" [(ngModel)]="usuario.username">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Senha</label>
+                                <input type="password" class="form-control" id="password" name="password" [(ngModel)]="usuario.password">
+                            </div>
+                            <span (click)="logar()" class="btn btn-primary float-end">Entrar</span>
+                          </form>
+                    </div>
+
+                    <div *ngIf="ids == 1"  class="box_conteudo_tab">
+                        <form>
+                            <div *ngIf="erroCad == true" class="mb-3">
+                                <span class="error"><i class='bx bxs-error'></i> Preencha todos os campos!</span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Nome de usuário</label>
+                                <input type="text" class="form-control" id="username" name="username" [(ngModel)]="usuarioCadastro.username">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">E-mail</label>
+                                <input type="text" class="form-control" id="email" name="email" [(ngModel)]="usuarioCadastro.email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Senha</label>
+                                <input type="password" class="form-control" id="password" name="password" [(ngModel)]="usuarioCadastro.password">
+                            </div>
+                            <span (click)="cadastrar()" class="btn btn-primary float-end">Cadastrar</span>
+                          </form>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+.conteudo{
+    margin-top: 100px;
+    margin-left: 350px;
+}
+@media (max-width: 991px) {
+    .conteudo{
+        margin-top: 100px;
+        margin-left: 0px;
+        padding: 0 20px;
+    }
+}
