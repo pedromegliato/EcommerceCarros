@@ -24,6 +24,31 @@ export class ConfiguracaoService {
       return this.http.get(this.APP_CONF_PROD + 'carro/');
   }
 
+  postCarro = (carro: any):Observable<any> =>{
+    return this.http.post(this.APP_CONF_PROD + 'carro/', carro);
+  }
+  putCarro = (carro: any):Observable<any> =>{
+    return this.http.put(this.APP_CONF_PROD + 'carro/'+carro.id+'/', carro);
+  }
+
+  postFoto = (foto: any):Observable<any> =>{
+    return this.http.post(this.APP_CONF_PROD + 'fotosCarro/', foto);
+  }
+  putFoto = (id: any, event: any) => {
+    return this.http.put(this.APP_CONF_PROD + 'fotosCarro/'+id+'/', event);
+  }
+
+
+  deleteCarro = (id: any) => {
+    return this.http.delete(this.APP_CONF_PROD + 'carro/'+id+'/').subscribe(data => {
+      alert('Carro deletado');
+    });
+  }
+
+  deleteFoto = (id: any) => {
+    return this.http.delete(this.APP_CONF_PROD + 'fotosCarro/'+id+'/');
+  }
+
 
 
 }

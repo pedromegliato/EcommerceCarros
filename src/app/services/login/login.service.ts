@@ -56,11 +56,10 @@ export class LoginService {
             sessionStorage.setItem("rt", rt);
             this.service.getUser().subscribe((data) => {
                 let user = data;
-                    if(user.is_superuser == true) {
+                    if(user.is_staff == true) {
                         this.router.navigate(['admin']);
                     } else {
-                        alert("Você não possui permissão para acessar esta área");
-                        this.logOut();
+                        this.router.navigate(['/']);
                     }
             });
         },
@@ -96,7 +95,7 @@ export class LoginService {
 
   logOut = () =>{
       sessionStorage.removeItem("rt");
-      this.router.navigate(["login"]);
+      this.router.navigate(["/"]);
   }
 
   recup = (email : any) => {

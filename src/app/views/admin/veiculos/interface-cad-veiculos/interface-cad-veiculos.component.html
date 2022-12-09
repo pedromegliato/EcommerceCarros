@@ -1,1 +1,48 @@
-<p>interface-cad-veiculos works!</p>
+<div class="textTituo"><b>Veículo. </b><span></span>Cadastre abaixo.</div>
+
+<div class="box_cadastro">
+    <div class="mb-3 me-2">
+        <label for="nome" class="form-label">Nome *</label>
+        <input type="text" class="form-control" id="nome" nome="nome" [(ngModel)]="carro.nome">
+    </div>
+
+    <div class="mb-3 me-2">
+        <label for="marca" class="form-label">Marca *</label>
+        <input type="text" class="form-control" id="marca" name="marca" [(ngModel)]="carro.marca">
+
+    </div>
+
+    <div class="mb-3 me-2">
+        <label for="modelo" class="form-label">Modelo *</label>
+        <input type="text" class="form-control" id="modelo" name="modelo" [(ngModel)]="carro.modelo">
+
+    </div>
+
+    <div class="mb-3 me-2">
+        <label for="ano" class="form-label">Ano </label>
+        <input type="number" class="form-control" id="ano" name="ano" [(ngModel)]="carro.ano">
+    </div>
+
+    <div class="mb-3 me-2">
+        <label for="kilometragem" class="form-label">Kilometragem </label>
+        <input type="number" class="form-control" id="kilometragem" name="kilometragem" [(ngModel)]="carro.kilometragem">
+    </div>
+
+    <div class="mb-3 me-2">
+        <label for="valor" class="form-label">Valor </label>
+        <input type="number" class="form-control" id="valor" name="valor" [(ngModel)]="carro.valor">
+    </div>
+
+    <div class="mb-3 me-2">
+        <label for="valorPromocao" class="form-label">Valor Promocional</label>
+        <input type="number" class="form-control" id="valorPromocao" name="valorPromocao" [(ngModel)]="carro.valorPromocao">
+    </div>
+
+    <div class="mb-3 me-2">
+        <label for="foto" class="form-label">Imagem do Veículo</label >
+        <input class="form-control" type="file" id="foto" (change)="onimg($event)">
+    </div>
+</div>
+<div class="block pe-5">
+    <span (click)="cadastrar()" class="btn btn-primary float-end">Cadastrar</span>
+</div>

@@ -33,8 +33,9 @@
             <th class="th-header bgk optTitu" mat-header-cell *matHeaderCellDef></th>
             <td mat-cell *matCellDef="let element" class="box_two_options">
                 <div class="td-action">
-                  <span class="opt" ><i class='bx bx-show-alt'></i> Visualizar</span>
+                  <!-- <span class="opt" ><i class='bx bx-show-alt'></i> Visualizar</span> -->
                   <span class="opt" (click)="editNoticia(element)"><i class='bx bx-edit'></i> Editar</span>
+                  <span class="opt" (click)="delete(element)"><i class='bx bxs-trash-alt'></i> Deletar</span>
                 </div>
             </td>
           </ng-container>
@@ -48,4 +49,58 @@
         aria-label="Select page of periodic elements">
     </mat-paginator>
 </div>
+
+
+  <!-- modal -->
+  <app-modal name="editar">
+    <div body class="content content_" *ngIf="item">
+      <div class="box_cadastro">
+        <div class="mb-3 me-2">
+            <label for="nome" class="form-label">Nome *</label>
+            <input type="text" class="form-control" id="nome" nome="nome" [(ngModel)]="item.nome" >
+        </div>
+    
+        <div class="mb-3 me-2">
+            <label for="marca" class="form-label">Marca *</label>
+            <input type="text" class="form-control" id="marca" name="marca" [(ngModel)]="item.marca">
+    
+        </div>
+    
+        <div class="mb-3 me-2">
+            <label for="modelo" class="form-label">Modelo *</label>
+            <input type="text" class="form-control" id="modelo" name="modelo" [(ngModel)]="item.modelo">
+    
+        </div>
+    
+        <div class="mb-3 me-2">
+            <label for="ano" class="form-label">Ano </label>
+            <input type="number" class="form-control" id="ano" name="ano" [(ngModel)]="item.ano">
+        </div>
+    
+        <div class="mb-3 me-2">
+            <label for="kilometragem" class="form-label">Kilometragem </label>
+            <input type="number" class="form-control" id="kilometragem" name="kilometragem" [(ngModel)]="item.kilometragem">
+        </div>
+    
+        <div class="mb-3 me-2">
+            <label for="valor" class="form-label">Valor </label>
+            <input type="number" class="form-control" id="valor" name="valor" [(ngModel)]="item.valor">
+        </div>
+    
+        <div class="mb-3 me-2">
+            <label for="valorPromocao" class="form-label">Valor Promocional</label>
+            <input type="number" class="form-control" id="valorPromocao" name="valorPromocao" [(ngModel)]="item.valorPromocao">
+        </div>
+    
+        <div class="mb-3 me-2">
+            <label for="foto" class="form-label">Imagem do Veículo</label >
+            <input class="form-control" type="file" id="foto" (change)="onimg($event)">
+        </div>
+    </div>
+    <div class="block pe-5">
+        <span (click)="salvar(item)" class="btn btn-primary float-end">Salvar</span>
+    </div>
+       
+  </div>
+</app-modal>
 

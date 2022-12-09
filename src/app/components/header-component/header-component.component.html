@@ -39,7 +39,8 @@
                     </ul>
                 </li>
                 <li class="nav-item personMobBox">
-                    <a (click)="menuRota(7)" class="nav-link personMenuLink"><i class='bx bx-user-circle bx-sm'></i> <span class="mobileMenu">Cadastre-se</span> </a>
+                    <a *ngIf="auth === false" (click)="menuRota(7)" class="nav-link personMenuLink"><i class='bx bx-user-circle bx-sm'></i> <span class="mobileMenu">Cadastre-se</span> </a>
+                    <a *ngIf="auth === true" (click)="menuRota(8)" class="nav-link personMenuLink"><i class='bx bx-user-circle bx-sm'></i> <span class="mobileMenu">Painel</span> </a>
                 </li>
             </ul>
         </div>

@@ -5,6 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { Carro } from 'src/app/models/carro.model';
 import { ConfiguracaoService } from 'src/app/services/configuracao/configuracao.service';
+import { ModalService } from 'src/app/services/modal/modal.service';
 
 @Component({
   selector: 'app-interface-list-veiculos',
@@ -12,6 +13,18 @@ import { ConfiguracaoService } from 'src/app/services/configuracao/configuracao.
   styleUrls: ['./interface-list-veiculos.component.scss']
 })
 export class InterfaceListVeiculosComponent implements OnInit {
+
+  carro = {
+    nome: "",
+    marca: "",
+    modelo:"",
+    ano: 0,
+    kilometragem: 0,
+    valor: 0,
+    valorPromocao: 0,
+    is_promocao: false,
+  }
+  img: any;
 
   listCarro: Carro [];
 
@@ -47,9 +60,52 @@ export class InterfaceListVeiculosComponent implements OnInit {
       this.dataSource.filter = filterValue.trim().toLowerCase();
   };
 
-  editNoticia = (element) => {
-    // this.noticiasService.setCacheNoticiaEditavel(element)
-    // this.router.navigate(['/admin/add-noticia']);
+  editNoticia = (event: any) => {
+      this.item = event;
+      this.openModal('editar');
+  }
+
+  delete = (event: any) => {
+      this.service.deleteFoto(event.fotos[0].id).subscribe(data => {
+        this.service.deleteCarro(event.id);
+        window.location.reload();
+      }, error => {
+        alert("erro ao excluir");
+      });
+      
+  }
+
+  openModal = (id: string) =>
+  {
+      ModalService.show(id);
+  }
+
+  closeModal = (id: string) =>
+  {
+      ModalService.hide(id);
+  }
+
+  onimg = (event: any) => {
+    this.img = event.target.files[0];
+    this.img.name.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+  }
+
+  salvar = (event: any) => { 
+
+    if(this.img != null && this.img != undefined){
+        const fotoCarro = new FormData();
+        fotoCarro.append("foto", this.img);
+        fotoCarro.append("fotos", event.id);
+
+        this.service.putFoto(event.fotos[0].id, fotoCarro).subscribe(data => {
+          console.log(data);
+        });
+    }
+  
+    this.service.putCarro(event).subscribe(data=> {
+        alert("Carro atualizado com sucesso!");
+        window.location.reload();
+      })
   }
 
 }

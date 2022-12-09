@@ -9,7 +9,7 @@
             </div>
             <div class="col-5 personRemove"> <span class="hoverPerson">Remover filtros</span> <span class="result">3.501 Resultados</span></div>
             <div class="col-5 text-end personOrder">
-                Ordernar:
+                <!-- Ordernar: -->
             </div>
         </div>
     </div>
@@ -57,18 +57,21 @@
         </div>
 
         <div class="conteudoCarsList">
-            
+            <div *ngFor="let item of listcar">
                 <div class="boxCar">
                     <div class="boximgCar">
-                        <img class="imgCar" src="../../../assets/img/mokupCar/bmw.jpeg">
-                        <div class="promtion">Promoção</div>
+                        <img class="imgCar" [attr.src]="(item.fotos[0].foto)">
+                        <div *ngIf="item.is_promocao == true" class="promtion">Promoção</div>
                     </div>
                     <div class="boxDescricao">
-                        <div class="tituloCar">Bmw 320i AUTOMATICO</div>
-                        <div class="DetalhesInfo">2012 57.407 Km São Paulo</div>
-                        <div><span class="PrecoPromo">R$ 73.199 </span><span class="Preco"> R$ 74.199</span></div>
+                        <div class="tituloCar">{{item.nome}}</div>
+                        <div class="DetalhesInfo">{{item.ano}} {{item.kilometragem}} Km {{item.modelo}}</div>
+                        <div><span class="PrecoPromo">R$ {{item.valorPromocao}} </span><span class="Preco"> R$ {{item.valor}}</span></div>
                     </div>
                 </div>
+
+            </div>
+             
         </div>
     </div>
 </div>

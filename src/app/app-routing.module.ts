@@ -27,7 +27,7 @@ const routes: Routes = [
           { path: 'veiculos/listar', component: InterfaceListVeiculosComponent },
           { path: 'veiculos/cadastrar', component: InterfaceCadVeiculosComponent },
           { path: 'configuracao', component: InterfaceConfiguracaoComponent},
-          { path: "", redirectTo: "dashboard", pathMatch: "full" },
+          { path: "", redirectTo: "veiculos", pathMatch: "full" },
 
         ]
     }

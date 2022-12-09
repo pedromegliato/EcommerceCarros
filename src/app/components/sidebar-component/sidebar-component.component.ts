@@ -57,6 +57,9 @@ export class SidebarComponentComponent implements OnInit {
             this.setmenuActive(event);
             this.router.navigate(['/admin/configuracao']);
             break;
+        case 5:
+            this.router.navigate(['/']);
+            break;
       }
   }
 

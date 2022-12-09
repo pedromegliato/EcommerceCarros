@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Carro } from 'src/app/models/carro.model';
+import { ConfiguracaoService } from 'src/app/services/configuracao/configuracao.service';
 
 @Component({
   selector: 'app-filtros-component',
@@ -135,9 +137,18 @@ export class FiltrosComponentComponent implements OnInit {
 
   ]
 
-  constructor() { }
+  listcar: any;
+
+  constructor(private service: ConfiguracaoService) { }
 
   ngOnInit(): void {
+    this.getCar();
+  }
+
+  getCar = () => {
+    this.service.getListCarros().subscribe(data => {
+        this.listcar = data;
+    });
   }
 
   colapse = () => {

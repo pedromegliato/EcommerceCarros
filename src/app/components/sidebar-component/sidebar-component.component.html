@@ -18,7 +18,7 @@
             >
                 <i class="fas fa-car fa-fw me-3"></i><span>Veículos</span>
             </a>
-            <a
+            <!-- <a
                 (click)="rota(3)"
                 [ngClass] = "{'active': ids == 3}"
                 class="list-group-item list-group-item-action py-2 ripple"
@@ -33,7 +33,7 @@
             >
                 <i class="fas fa-user-circle fa-fw me-3"></i><span>Perfil</span>
             </a
-          >
+          > -->
         </div>
       </div>
     </nav>
@@ -53,7 +53,7 @@
           <i class="fas fa-bars"></i>
         </button>
   
-        <a class="navbar-brand PersonLogo" href="#">
+        <a class="navbar-brand PersonLogo" (click)="rota(5)">
           PGLM
         </a>
       </div>
