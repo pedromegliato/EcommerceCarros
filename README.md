@@ -1,28 +1,27 @@
 # EcommerceCarrosFront
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.7.
+Projeto realizado na versao 14.2.7 do angular CLI
 
-## Development server
+## Instruções
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Após realizar o clone do projeto:
 
-## Code scaffolding
+1 - rode o comando `npm install` para installar todas dependencias do projeto
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2 - após a conclusão do mesmo, rode o projeto com o comando `ng serve`, e abra no navegar o caminho 
+`http://localhost:4200/`
 
-## Build
+## Observações
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+no banco de dados já existe um usuario e senha cadastrados caso nao queria realizar o cadastro de um usuario
 
-## Running unit tests
+`user`: `string`
+`password` : `admin@@888`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## BackEnd
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+link do banckEnd para rodar o projeto por completo
 
-## Further help
+link: https://github.com/pedromegliato/EcommerceCarros
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# EcommerceCarros
