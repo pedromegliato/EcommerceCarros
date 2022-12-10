@@ -15,7 +15,6 @@ export class InterfaceLoginCadastroComponent implements OnInit {
   usuario = { username: "", password: "" };
 
   usuarioCadastro = {
-      last_login: "",
       password: "",
       is_superuser: true,
       username: "",
@@ -54,12 +53,11 @@ export class InterfaceLoginCadastroComponent implements OnInit {
   }
 
   cadastrar = () => {
-    if(this.usuario.password == "" || this.usuario.username == "") {
+    if(this.usuarioCadastro.password == "" || this.usuarioCadastro.username == "" || this.usuarioCadastro.email == "") {
       this.erroCad=true;
     } else {
       this.erroCad=false;
-      console.log(this.usuarioCadastro);
-      this.loginService.login(this.usuario);
+      this.loginService.cadastro(this.usuarioCadastro);
     }
   }
 

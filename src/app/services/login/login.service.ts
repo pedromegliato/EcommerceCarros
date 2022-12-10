@@ -71,10 +71,10 @@ export class LoginService {
 
   cadastro = (usuario : any) => {
 
-      return this.http.post(this.API_CONF + 'cadastro/', usuario).subscribe(
+      return this.http.post(this.API_CONF + 'user/', usuario).subscribe(
         data =>{
           alert("Login ou Cadastro realizado com sucesso");
-          this.router.navigate(['login']);
+          this.router.navigate(['/']);
     
         },
         error => {
