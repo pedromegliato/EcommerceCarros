@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Carro } from 'src/app/models/carro.model';
 import { ConfiguracaoService } from 'src/app/services/configuracao/configuracao.service';
 
@@ -9,7 +10,9 @@ import { ConfiguracaoService } from 'src/app/services/configuracao/configuracao.
 })
 export class FiltrosComponentComponent implements OnInit {
 
-  toggleColapse: boolean = true;
+  toggleColapse: boolean = false;
+
+  total: any;
 
   filtros = [
     {
@@ -137,17 +140,22 @@ export class FiltrosComponentComponent implements OnInit {
 
   ]
 
-  listcar: any;
+  listcar: any [] = [];
 
-  constructor(private service: ConfiguracaoService) { }
+  constructor(
+    private service: ConfiguracaoService,
+    private route: Router
+  ) { }
 
   ngOnInit(): void {
     this.getCar();
   }
 
+
   getCar = () => {
     this.service.getListCarros().subscribe(data => {
         this.listcar = data;
+        this.total = data.length;
     });
   }
 
@@ -157,6 +165,10 @@ export class FiltrosComponentComponent implements OnInit {
       } else {
           this.toggleColapse = false;
       }
+  }
+
+  inicio = () => {
+      window.location.reload();
   }
 
   expande = (itemId: any, event: any, conteudoId: any) => {

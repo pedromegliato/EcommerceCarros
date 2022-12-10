@@ -16,10 +16,10 @@ div.modalPerson {
     border: solid 1px #aaa;
     border-radius: 5px;
     opacity: 1;
-    max-width: calc(100% - 20px);
-    max-height: 95vh;
+    max-width: 880px;
+    min-width: 300px;
+    max-height: 80vh;
     min-height: 256px;
-    min-width: 200px;
     z-index: 889;
     padding: 10px;
     overflow-y: auto;

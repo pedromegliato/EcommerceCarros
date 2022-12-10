@@ -15,21 +15,21 @@ export class InterfaceLoginCadastroComponent implements OnInit {
   usuario = { username: "", password: "" };
 
   usuarioCadastro = {
-    last_login: "",
-    password: "",
-    is_superuser: false,
-    username: "",
-    first_name: "",
-    last_name: "",
-    email: "",
-    is_staff: false,
-    is_active: true,
-    nivelAcesso: "1",
-    endereco: "",
-    cidade: "",
-    estado: "",
-    cep: "",
-    sobre: ""
+      last_login: "",
+      password: "",
+      is_superuser: true,
+      username: "",
+      first_name: "",
+      last_name: "",
+      email: "",
+      is_staff: true,
+      is_active: true,
+      nivelAcesso: "1",
+      endereco: "",
+      cidade: "",
+      estado: "",
+      cep: "",
+      sobre: ""
   }
 
   constructor(private loginService: LoginService) { }

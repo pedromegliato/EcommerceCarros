@@ -2,17 +2,23 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatPaginator } from '@angular/material/paginator';
+import { MatPaginator, MatPaginatorIntl } from '@angular/material/paginator';
 import { Carro } from 'src/app/models/carro.model';
 import { ConfiguracaoService } from 'src/app/services/configuracao/configuracao.service';
 import { ModalService } from 'src/app/services/modal/modal.service';
+import { CustomPaginator } from 'src/app/services/Personalizacao-Material/CustomPaginator';
 
 @Component({
   selector: 'app-interface-list-veiculos',
   templateUrl: './interface-list-veiculos.component.html',
-  styleUrls: ['./interface-list-veiculos.component.scss']
+  styleUrls: ['./interface-list-veiculos.component.scss'],
+  providers: [
+    { provide: MatPaginatorIntl, useValue: CustomPaginator() }
+  ]
 })
 export class InterfaceListVeiculosComponent implements OnInit {
+
+  imgErro = "../../../../../assets/img/sistema/exclusao.gif";
 
   carro = {
     nome: "",
@@ -53,16 +59,34 @@ export class InterfaceListVeiculosComponent implements OnInit {
           this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;
       });
-  };
+  }
 
   applyFilter = (event: Event) => {
       const filterValue = (event.target as HTMLInputElement).value;
       this.dataSource.filter = filterValue.trim().toLowerCase();
-  };
+  }
 
-  editNoticia = (event: any) => {
+  onimg = (event: any) => {
+
+      this.img = event.target.files[0];
+      this.img.name.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+
+      var image = document.getElementById('imgCarro') as HTMLImageElement;
+      if(image !== null){
+          const a = URL.createObjectURL(event.target.files[0]);
+          image.src= a;
+          console.log(image);
+      }
+  }
+
+  editCarro = (event: any) => {
       this.item = event;
       this.openModal('editar');
+  }
+
+  confirmaDelete = (event: any) => {
+      this.item = event;
+      this.openModal('deletar');
   }
 
   delete = (event: any) => {
@@ -71,23 +95,15 @@ export class InterfaceListVeiculosComponent implements OnInit {
         window.location.reload();
       }, error => {
         alert("erro ao excluir");
-      });
-      
+      });  
   }
 
-  openModal = (id: string) =>
-  {
+  openModal = (id: string) => {
       ModalService.show(id);
   }
 
-  closeModal = (id: string) =>
-  {
+  closeModal = (id: string) => {
       ModalService.hide(id);
-  }
-
-  onimg = (event: any) => {
-    this.img = event.target.files[0];
-    this.img.name.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
   }
 
   salvar = (event: any) => { 

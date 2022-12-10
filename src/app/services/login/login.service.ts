@@ -56,7 +56,7 @@ export class LoginService {
             sessionStorage.setItem("rt", rt);
             this.service.getUser().subscribe((data) => {
                 let user = data;
-                    if(user.is_staff == true) {
+                    if(user.is_superuser == true) {
                         this.router.navigate(['admin']);
                     } else {
                         this.router.navigate(['/']);
@@ -94,8 +94,9 @@ export class LoginService {
   }
 
   logOut = () =>{
-      sessionStorage.removeItem("rt");
-      this.router.navigate(["/"]);
+        alert("Você foi deslogado");
+        sessionStorage.removeItem("rt");
+        this.router.navigate(["/"]);
   }
 
   recup = (email : any) => {
